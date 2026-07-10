@@ -101,3 +101,12 @@ docker compose up --build
 ```
 
 Sürümleme ayrıntıları için [`RELEASING.md`](RELEASING.md) dosyasına bak.
+
+## Windows uygulaması
+
+GitHub Releases sayfasından işlemci tipine uygun tek dosyalık portable uygulamayı indir:
+
+- Çoğu Windows bilgisayar için `windows-x64.exe`
+- Windows on ARM cihazları için `windows-arm64.exe`
+
+Dosyayı doğrudan çalıştırmak yeterlidir; kurulum ve Node.js gerekmez. Uygulama varsayılan tarayıcıda açılır ve tüm içeriği yalnızca bilgisayarındaki `127.0.0.1` adresinden sunar. Kapatmak için uygulama sekmesinde `Ctrl+Shift+Q` kullanılabilir.

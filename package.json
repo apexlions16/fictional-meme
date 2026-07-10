@@ -12,7 +12,11 @@
     "preversion": "npm run release:check",
     "release:patch": "npm version patch -m \"chore(release): %s\"",
     "release:minor": "npm version minor -m \"chore(release): %s\"",
-    "release:major": "npm version major -m \"chore(release): %s\""
+    "release:major": "npm version major -m \"chore(release): %s\"",
+    "desktop:prepare": "node scripts/prepare-desktop.mjs",
+    "desktop:windows:x64": "node scripts/build-windows-exe.mjs amd64",
+    "desktop:windows:arm64": "node scripts/build-windows-exe.mjs arm64",
+    "desktop:windows": "npm run build && npm run desktop:prepare && npm run desktop:windows:x64 && npm run desktop:windows:arm64"
   },
   "dependencies": {
     "react": "^19.2.7",

@@ -59,3 +59,19 @@ docker run --rm -p 8080:8080 ghcr.io/KULLANICI_ADIN/fictional-meme:1.0.0
 Uygulama `http://localhost:8080` üzerinde açılır. Sağlık kontrolü `http://localhost:8080/healthz` adresindedir.
 
 İlk oluşturulan container paketi varsayılan olarak private görünebilir. Public repo kullanıyorsan paket sayfasındaki **Package settings → Change visibility** alanından public yapabilirsin.
+
+## Windows portable EXE
+
+Release workflow her sürüm etiketi için iki tek-dosya executable üretir:
+
+- `Fictional-Meme-vX.Y.Z-windows-x64.exe`
+- `Fictional-Meme-vX.Y.Z-windows-arm64.exe`
+
+Yerel üretim:
+
+```bash
+npm ci
+npm run desktop:windows
+```
+
+Çıktılar `release/` klasörüne yazılır. EXE, derlenmiş web uygulamasını içine gömer ve yalnızca `127.0.0.1` üzerinde yerel bir sunucu açar. Node.js, Docker veya ayrı bir kurulum gerektirmez. Kod imzalama sertifikası yapılandırılmadığı sürece Windows SmartScreen yayıncıyı doğrulayamaz.

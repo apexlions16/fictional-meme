@@ -13,3 +13,11 @@ Bu projedeki önemli değişiklikler bu dosyada belgelenir. Sürümler Semantic 
 - PWA, koyu/açık tema ve GitHub Pages dağıtımı.
 - Otomatik GitHub Release üretimi ve doğrulama özetleri.
 - GitHub Container Registry için çok mimarili OCI paketi.
+
+### Desktop release
+
+- Tek dosyalık portable Windows x64 ve Windows ARM64 `.exe` çıktıları eklendi.
+- Uygulama dosyaları executable içine gömülür; ayrıca Node.js veya kurulum gerekmez.
+- Aynı bilgisayarda ikinci kez açıldığında çalışan uygulama yeniden kullanılır.
+- Yerel proje ve favoriler sabit localhost kökeni üzerinden korunur.
+- `Ctrl+Shift+Q` masaüstü sunucusunu güvenli biçimde kapatır.
