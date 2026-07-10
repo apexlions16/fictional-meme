@@ -29,3 +29,21 @@ feat: add cloud project synchronization
 feat: add community template marketplace
 feat: add ai-assisted fictional copy generation
 ```
+
+## Releases ve Packages'i etkinleştirme
+
+Ek bir secret oluşturman gerekmez. Workflow'lar GitHub'ın otomatik `GITHUB_TOKEN` yetkisini kullanır.
+
+Kodları `main` dalına gönderdikten sonra ilk sürüm etiketini oluştur:
+
+```bash
+git tag -a v1.0.0 -m "Fictional Meme v1.0.0"
+git push origin v1.0.0
+```
+
+GitHub'da **Actions** sekmesinde şu iki iş akışı çalışır:
+
+- `Create GitHub Release`
+- `Publish GitHub Package`
+
+Başarılı tamamlandığında repo ana sayfasında **Releases** ve **Packages** bağlantıları görünür. Container paketi ilk yayında private olabilir; paket ayarlarından görünürlüğünü public olarak değiştirebilirsin.

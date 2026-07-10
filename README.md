@@ -70,3 +70,34 @@ Projeler ve kullanım istatistikleri `localStorage` üzerinde `fictional-meme:da
 ## Lisans
 
 MIT
+
+## Releases ve GitHub Packages
+
+`v1.0.0` gibi bir sürüm etiketi GitHub'a gönderildiğinde iki yayın otomatik hazırlanır:
+
+- **Releases** bölümüne çalıştırılabilir statik web arşivleri (`zip` ve `tar.gz`) ile SHA-256 doğrulama dosyası eklenir.
+- **Packages** bölümüne `ghcr.io/OWNER/fictional-meme` adıyla `linux/amd64` ve `linux/arm64` container imajı gönderilir.
+
+İlk sürümü yayımlamak için:
+
+```bash
+npm ci
+npm run release:check
+git tag -a v1.0.0 -m "Fictional Meme v1.0.0"
+git push origin v1.0.0
+```
+
+Container'ı çalıştırma:
+
+```bash
+docker pull ghcr.io/KULLANICI_ADIN/fictional-meme:1.0.0
+docker run --rm -p 8080:8080 ghcr.io/KULLANICI_ADIN/fictional-meme:1.0.0
+```
+
+Yerel Docker geliştirme testi:
+
+```bash
+docker compose up --build
+```
+
+Sürümleme ayrıntıları için [`RELEASING.md`](RELEASING.md) dosyasına bak.

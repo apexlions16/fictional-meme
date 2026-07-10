@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc -b --pretty false"
+    "typecheck": "tsc -b --pretty false",
+    "release:check": "npm run typecheck && npm run build",
+    "preversion": "npm run release:check",
+    "release:patch": "npm version patch -m \"chore(release): %s\"",
+    "release:minor": "npm version minor -m \"chore(release): %s\"",
+    "release:major": "npm version major -m \"chore(release): %s\""
   },
   "dependencies": {
     "react": "^19.2.7",
@@ -19,5 +24,10 @@
     "@vitejs/plugin-react": "^5.1.4",
     "typescript": "^7.0.2",
     "vite": "^8.1.4"
+  },
+  "description": "Hayalî karakterler ve evrenler için gelişmiş, tarayıcı tabanlı meme üretim stüdyosu.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
   }
 }

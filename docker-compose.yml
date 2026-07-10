@@ -1,0 +1,11 @@
+services:
+  fictional-meme:
+    build:
+      context: .
+      args:
+        VERSION: local
+        REVISION: local
+        SOURCE: local
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
